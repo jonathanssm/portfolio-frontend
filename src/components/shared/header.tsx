@@ -32,36 +32,42 @@ export default function Header() {
     return (
         <header className="border-b bg-background">
             <div className="container mx-auto px-4">
-                <div className="flex justify-between items-center py-4">
-                    <div className="flex flex-col items-start gap-2">
-                        <div className="flex items-center gap-2">
-                            <span className="text-primary">💻</span>
-                            <span className="text-2xl font-bold">Moraes CodeForge</span>
-                        </div>
+                <div className="flex flex-col sm:flex-row justify-between items-center py-4 gap-2 sm:gap-0">
+                    <div className="flex items-center gap-2">
+                        <span className="text-primary">💻</span>
+                        <span className="text-2xl font-bold">Moraes CodeForge</span>
                     </div>
 
-                    <div className="flex items-center space-x-2">
-                        <nav className="flex space-x-2">
-                            <Button asChild variant={pathname === '/home' ? 'default' : 'ghost'}>
+                    <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-2 w-full sm:w-auto">
+                        <nav className="flex flex-col sm:flex-row space-y-1 sm:space-y-0 sm:space-x-2 w-full sm:w-auto">
+                            <Button asChild variant={pathname === '/home' ? 'default' : 'ghost'}
+                                    className="w-full sm:w-auto">
                                 <Link href="/home">Home</Link>
                             </Button>
-                            <Button asChild variant={pathname === '/contacts' ? 'default' : 'ghost'}>
+                            <Button asChild variant={pathname === '/contacts' ? 'default' : 'ghost'}
+                                    className="w-full sm:w-auto">
                                 <Link href="/contacts">Contatos</Link>
                             </Button>
                         </nav>
 
-                        <Button variant="outline" onClick={toggleTheme}>
-                            {theme === 'light' ? <Moon className="w-5 h-5"/> : <Sun className="w-5 h-5"/>}
-                        </Button>
+                        <div className="flex items-center space-x-2 mt-2 sm:mt-0">
+                            <Button variant="outline" onClick={toggleTheme}>
+                                {theme === 'light' ? <Moon className="w-5 h-5"/> : <Sun className="w-5 h-5"/>}
+                            </Button>
 
-                        <a href="https://github.com/jonathanssm"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           className="ml-2">
-                            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg"
-                                 alt="GitHub"
-                                 className="w-6 h-6 hover:opacity-80 transition-opacity dark:invert"/>
-                        </a>
+                            <a
+                                href="https://github.com/jonathanssm"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex-shrink-0"
+                            >
+                                <img
+                                    src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg"
+                                    alt="GitHub"
+                                    className="w-6 h-6 hover:opacity-80 transition-opacity dark:invert"
+                                />
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
