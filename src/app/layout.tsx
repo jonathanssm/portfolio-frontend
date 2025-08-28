@@ -4,6 +4,7 @@ import "./globals.css";
 import React from "react";
 import Providers from "@/lib/providers/providers";
 import Header from "@/components/shared/header";
+import 'devicon/devicon.min.css';
 
 const inter = Inter({subsets: ['latin']});
 
