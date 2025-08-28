@@ -22,6 +22,34 @@ export default function Home() {
                 'Implantação e suporte técnico à equipe',
             ],
             stack: 'Java 12, Spring Boot, Angular 11, Azure, SQL Server, JUnit, SonarQube',
+        },
+        {
+            cargo: 'Desenvolvedor Full-Stack – Monitora Soluções Tecnológicas',
+            projeto: 'Plataforma de reservas de viagens',
+            atividades: [
+                'Desenvolvimento de microserviços e integrações com APIs de terceiros, como Azul, LATAM, GOL, Localiza, Movida, etc',
+                ' Revisão e implantação de código, suporte à equipe'
+            ],
+            stack: 'Java 8/12, C#, Spring Boot, SQL Server, Kafka, Jenkins',
+        },
+        {
+            cargo: 'Desenvolvedor Full-Stack - AMcom ',
+            projeto: 'Sistema de gestão hospitalar (Tasy)',
+            atividades: [
+                'Desenvolvimento e manutenção de sistemas e banco de dados',
+                'Suporte técnico interno e otimizações de performance'
+            ],
+            stack: 'Java 8, AngularJS, OracleDB, Hibernate, REST',
+        },
+        {
+            cargo: 'Desenvolvedor Full-Stack - Secretaria Municipal da Fazenda',
+            projeto: 'Digitalização de serviços públicos',
+            atividades: [
+                'Desenvolvimento e manutenção de aplicações críticas',
+                'Responsável técnico em ausência do arquiteto principal',
+                'Implementação de testes automatizados',
+            ],
+            stack: 'Java 8, Angular 8, Spring Boot, Oracle/MySQL, Docker, JUnit, TestNG',
         }
     ];
 
