@@ -3,7 +3,7 @@ import {Geist, Geist_Mono, Inter} from "next/font/google";
 import "./globals.css";
 import React from "react";
 import Providers from "@/lib/providers/providers";
-import Header from "@/components/shared/header";
+import Header from "@/components/shared/header/header";
 import 'devicon/devicon.min.css';
 
 const inter = Inter({subsets: ['latin']});
