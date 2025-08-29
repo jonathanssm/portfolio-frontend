@@ -15,7 +15,7 @@ export default function Header() {
     }
 
     return (
-        <header className="border-b bg-background">
+        <header className="fixed top-0 left-0 w-full z-50 border-b bg-background">
             <div className="container mx-auto px-4">
                 <div className="flex flex-col sm:flex-row justify-between items-center py-4 gap-2 sm:gap-0">
                     <div className="flex items-center gap-2">
