@@ -5,6 +5,7 @@ import React from "react";
 import Providers from "@/lib/providers/providers";
 import Header from "@/components/shared/header/header";
 import 'devicon/devicon.min.css';
+import {Analytics} from "@vercel/analytics/react";
 
 const inter = Inter({subsets: ['latin']});
 
@@ -32,6 +33,7 @@ export default function RootLayout({
         <html lang="pt-BR">
         <body className={`${inter.className} ${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Providers>
+            <Analytics/>
             <div className="min-h-screen bg-background">
                 <Header/>
                 <main className="pt-20">
