@@ -3,30 +3,15 @@
 import Link from 'next/link'
 import {usePathname} from 'next/navigation'
 import {Button} from '@/components/ui/button'
-import {useEffect, useState} from 'react'
 import {Moon, Sun} from 'lucide-react'
+import {useTheme} from 'next-themes'
 
 export default function Header() {
     const pathname = usePathname()
-    const [theme, setTheme] = useState<'light' | 'dark'>('light')
-
-    useEffect(() => {
-        const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null
-        if (savedTheme) {
-            setTheme(savedTheme)
-            document.documentElement.classList.toggle('dark', savedTheme === 'dark')
-        } else {
-            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-            setTheme(prefersDark ? 'dark' : 'light')
-            document.documentElement.classList.toggle('dark', prefersDark)
-        }
-    }, [])
+    const {theme, setTheme} = useTheme()
 
     const toggleTheme = () => {
-        const newTheme = theme === 'light' ? 'dark' : 'light'
-        setTheme(newTheme)
-        document.documentElement.classList.toggle('dark', newTheme === 'dark')
-        localStorage.setItem('theme', newTheme)
+        setTheme(theme === 'light' ? 'dark' : 'light')
     }
 
     return (
