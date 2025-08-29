@@ -4,6 +4,7 @@ import {Button} from '@/components/ui/button';
 import {Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger} from '@/components/ui/sheet';
 import {Menu} from 'lucide-react';
 import Link from "next/link";
+import Image from "next/image";
 
 interface MobileSheetProps {
     isOpen: boolean;
@@ -41,10 +42,13 @@ export default function MobileSheet({isOpen, onOpenChange, pathname}: MobileShee
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 mt-4"
                 >
-                    <img
+                    <Image
                         src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg"
                         alt="GitHub"
-                        className="w-6 h-6 hover:opacity-80 transition-opacity dark:invert"
+                        width={24}
+                        height={24}
+                        className="hover:opacity-80 transition-opacity dark:invert"
+                        priority
                     />
                     GitHub
                 </a>
