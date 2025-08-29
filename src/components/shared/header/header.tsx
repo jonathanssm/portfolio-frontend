@@ -6,6 +6,7 @@ import NavButton from '@/components/shared/header/nav-button';
 import ThemeToggle from '@/components/shared/header/theme-toggle';
 import MobileSheet from '@/components/shared/header/mobile-sheet';
 import useIsMobile from '@/hooks/use-is-mobile';
+import Image from 'next/image';
 
 export default function Header() {
     const pathname = usePathname();
@@ -66,10 +67,13 @@ export default function Header() {
                             rel="noopener noreferrer"
                             className="flex-shrink-0"
                         >
-                            <img
+                            <Image
                                 src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg"
                                 alt="GitHub"
-                                className="w-6 h-6 hover:opacity-80 transition-opacity dark:invert"
+                                width={24}
+                                height={24}
+                                className="hover:opacity-80 transition-opacity dark:invert"
+                                priority
                             />
                         </a>
                     </nav>

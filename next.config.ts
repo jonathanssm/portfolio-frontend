@@ -7,6 +7,11 @@ const nextConfig: NextConfig = {
                 protocol: 'https',
                 hostname: 'github-readme-stats.vercel.app',
                 pathname: '/**',
+            },
+            {
+                protocol: 'https',
+                hostname: 'cdn.jsdelivr.net',
+                pathname: '/gh/simple-icons/simple-icons/icons/**',
             }
         ]
     }
