@@ -1,4 +1,5 @@
 import type {NextConfig} from "next";
+import { analyticsConfig, getSecurityHeaders } from "@/lib/analytics-config";
 
 const nextConfig: NextConfig = {
     images: {
@@ -14,29 +15,36 @@ const nextConfig: NextConfig = {
         ]
     },
     async headers() {
+        const securityHeaders = getSecurityHeaders();
+        
         return [
             {
                 source: '/api/:path*',
                 headers: [
                     {
                         key: 'Access-Control-Allow-Origin',
-                        value: process.env.NODE_ENV === 'production' 
-                            ? 'https://www.jonathanssm.com' 
-                            : 'http://localhost:3000',
+                        value: analyticsConfig.cors.allowedOrigins[0], // Production origin
                     },
                     {
                         key: 'Access-Control-Allow-Methods',
-                        value: 'GET, POST, PUT, DELETE, OPTIONS',
+                        value: analyticsConfig.cors.allowedMethods.join(', '),
                     },
                     {
                         key: 'Access-Control-Allow-Headers',
-                        value: 'Content-Type, Authorization, X-Requested-With',
+                        value: analyticsConfig.cors.allowedHeaders.join(', '),
                     },
                     {
                         key: 'Access-Control-Max-Age',
-                        value: '86400',
+                        value: analyticsConfig.cors.maxAge.toString(),
                     },
                 ],
+            },
+            {
+                source: '/(.*)',
+                headers: Object.entries(securityHeaders).map(([key, value]) => ({
+                    key,
+                    value,
+                })),
             },
         ];
     },

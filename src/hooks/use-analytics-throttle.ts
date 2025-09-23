@@ -35,8 +35,6 @@ export function useAnalyticsThrottle(options: Partial<ThrottleOptions> = {}) {
         }
 
         return timeSinceLastRequest < config.delay;
-
-
     }, [config.delay, config.maxRequests, config.windowMs]);
 
     const recordRequest = useCallback(() => {
