@@ -8,6 +8,10 @@ interface CloudflareInsightsProps {
     enabled?: boolean;
 }
 
+interface WindowWithCFBeacon extends Window {
+    cfBeacon?: { token: string };
+}
+
 export default function CloudflareInsights({ 
     token = analyticsConfig.cloudflare.token,
     enabled = analyticsConfig.cloudflare.enabled
@@ -27,12 +31,12 @@ export default function CloudflareInsights({
         }
 
         const loadScript = () => {
+            (window as WindowWithCFBeacon).cfBeacon = { token };
+            
             const script = document.createElement('script');
             script.src = 'https://static.cloudflareinsights.com/beacon.min.js';
-            script.setAttribute('data-cf-beacon', JSON.stringify({ token }));
             script.async = true;
             script.defer = true;
-            script.crossOrigin = 'anonymous';
 
             script.onerror = () => {
                 loadedRef.current = false;
