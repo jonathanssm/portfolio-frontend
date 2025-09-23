@@ -46,3 +46,4 @@ lerna-debug.log*
 EOF
 
 /.cursor/
+src/components/analytics/cloudflare-insights.tsx
