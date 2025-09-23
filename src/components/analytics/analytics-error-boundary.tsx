@@ -28,12 +28,7 @@ class AnalyticsErrorBoundary extends Component<Props, State> {
         this.setState({ errorInfo });
         this.props.onError?.(error, errorInfo);
 
-        if (process.env.NODE_ENV === 'development') {
-            console.warn('Analytics Error Boundary caught an error:', error);
-            console.warn('Error Info:', errorInfo);
-        } else {
-            console.warn('Analytics error occurred:', error.message);
-        }
+        // Error handling without console logs
     }
 
     render() {

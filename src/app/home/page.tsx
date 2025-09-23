@@ -75,24 +75,30 @@ export default function Home() {
 
             <section className="text-center">
                 <div className="flex flex-col sm:flex-row justify-center gap-4 flex-wrap">
-                    <Image
-                        src="https://github-readme-stats.vercel.app/api?username=jonathanssm&show_icons=true&theme=radical&hide_title=true"
-                        alt="GitHub Stats"
-                        className="rounded-lg w-full sm:w-[450px] h-auto"
-                        width={450}
-                        height={250}
-                        priority
-                        unoptimized
-                    />
-                    <Image
-                        src="https://github-readme-stats.vercel.app/api/top-langs/?username=jonathanssm&layout=compact&theme=radical&hide_title=true"
-                        alt="Top Languages"
-                        className="rounded-lg w-full sm:w-[350px] h-auto"
-                        width={350}
-                        height={150}
-                        priority
-                        unoptimized
-                    />
+                    <div className="w-full sm:w-[450px]">
+                        <Image
+                            src="https://github-readme-stats.vercel.app/api?username=jonathanssm&show_icons=true&theme=radical&hide_title=true"
+                            alt="GitHub Stats"
+                            className="rounded-lg w-full h-auto"
+                            width={450}
+                            height={250}
+                            style={{ width: "100%", height: "auto" }}
+                            priority
+                            unoptimized
+                        />
+                    </div>
+                    <div className="w-full sm:w-[350px]">
+                        <Image
+                            src="https://github-readme-stats.vercel.app/api/top-langs/?username=jonathanssm&layout=compact&theme=radical&hide_title=true"
+                            alt="Top Languages"
+                            className="rounded-lg w-full h-auto"
+                            width={350}
+                            height={150}
+                            style={{ width: "100%", height: "auto" }}
+                            priority
+                            unoptimized
+                        />
+                    </div>
                 </div>
             </section>
 
