@@ -4,7 +4,7 @@ import {QueryClient, QueryClientProvider} from '@tanstack/react-query'
 import React, {useEffect, useState} from 'react'
 import {ThemeProvider} from '@/components/theme-provider'
 
-export default function Providers({children}: { children: React.ReactNode }) {
+export default function Providers({children}: Readonly<{ children: React.ReactNode }>) {
     const [queryClient] = useState(() => new QueryClient())
     const [mounted, setMounted] = useState(false)
 

@@ -8,7 +8,7 @@ interface ThemeToggleProps {
     className?: string;
 }
 
-export default function ThemeToggle({className = ''}: ThemeToggleProps) {
+export default function ThemeToggle({className = ''}: Readonly<ThemeToggleProps>) {
     const {theme, setTheme} = useTheme();
 
     const toggleTheme = () => setTheme(theme === 'light' ? 'dark' : 'light');

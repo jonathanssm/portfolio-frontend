@@ -12,7 +12,7 @@ interface MobileSheetProps {
     pathname: string;
 }
 
-export default function MobileSheet({isOpen, onOpenChange, pathname}: MobileSheetProps) {
+export default function MobileSheet({isOpen, onOpenChange, pathname}: Readonly<MobileSheetProps>) {
     const handleCloseSheet = () => {
         onOpenChange(false);
     };

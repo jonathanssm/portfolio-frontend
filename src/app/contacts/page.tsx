@@ -1,6 +1,7 @@
 'use client';
 
 import {Label} from '@/components/ui/label';
+import Image from "next/image";
 
 export default function Contacts() {
     const contatos = [
@@ -36,10 +37,13 @@ export default function Contacts() {
                 {contatos.map((contato) => (
                     <div key={contato.alt} className="flex flex-col items-center gap-2">
                         <a href={contato.href} target="_blank" rel="noopener noreferrer">
-                            <img
+                            <Image
                                 src={contato.img}
                                 alt={contato.alt}
                                 className="w-12 h-12 sm:w-16 sm:h-16 object-contain hover:opacity-80 transition-opacity dark:invert"
+                                height={24}
+                                width={24}
+                                priority
                             />
                         </a>
                         <Label className="text-center text-sm sm:text-base">{contato.label}</Label>

@@ -5,13 +5,11 @@ const nextConfig: NextConfig = {
         remotePatterns: [
             {
                 protocol: 'https',
-                hostname: 'github-readme-stats.vercel.app',
-                pathname: '/**',
+                hostname: 'github-readme-stats.vercel.app'
             },
             {
                 protocol: 'https',
-                hostname: 'cdn.jsdelivr.net',
-                pathname: '/gh/simple-icons/simple-icons/icons/**',
+                hostname: 'cdn.jsdelivr.net'
             }
         ]
     }
