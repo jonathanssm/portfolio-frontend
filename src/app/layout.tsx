@@ -5,7 +5,6 @@ import React from "react";
 import Providers from "@/lib/providers/providers";
 import Header from "@/components/shared/header/header";
 import 'devicon/devicon.min.css';
-import CloudflareInsights from "@/components/analytics/cloudflare-insights";
 import AnalyticsErrorBoundary from "@/components/analytics/analytics-error-boundary";
 import AnalyticsProvider from "@/components/analytics/analytics-provider";
 
@@ -37,7 +36,6 @@ export default function RootLayout({
         <Providers>
             <AnalyticsErrorBoundary>
                 <AnalyticsProvider />
-                <CloudflareInsights />
             </AnalyticsErrorBoundary>
             <div className="min-h-screen bg-background pt-25">
                 <Header/>
