@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { useAnalyticsThrottle } from "@/hooks/use-analytics-throttle";
 import { useCallback } from 'react';
+import type { BeforeSendEvent } from "@vercel/analytics/react";
 
 export default function AnalyticsProvider() {
     const { canMakeRequest } = useAnalyticsThrottle({
@@ -12,7 +13,7 @@ export default function AnalyticsProvider() {
         windowMs: 60000,
     });
     
-    const handleBeforeSend = useCallback((data: any) => {
+    const handleBeforeSend = useCallback((data: BeforeSendEvent) => {
         if (data.url?.includes('_vercel/insights/view')) {
             if (!canMakeRequest()) {
                 console.debug('Analytics request throttled');
