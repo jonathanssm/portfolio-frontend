@@ -18,7 +18,7 @@ export default function NavButton({
                                       children,
                                       onClick,
                                       className = ''
-                                  }: NavButtonProps) {
+                                  }: Readonly<NavButtonProps>) {
     return (
         <Button
             asChild

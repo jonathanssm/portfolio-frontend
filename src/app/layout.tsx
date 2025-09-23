@@ -34,9 +34,9 @@ export default function RootLayout({
         <body className={`${inter.className} ${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Providers>
             <Analytics/>
-            <div className="min-h-screen bg-background">
+            <div className="min-h-screen bg-background pt-25">
                 <Header/>
-                <main className="pt-20">
+                <main>
                     {children}
                 </main>
             </div>

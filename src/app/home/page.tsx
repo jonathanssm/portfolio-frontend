@@ -1,6 +1,7 @@
 'use client';
 
 import {Card, CardContent} from '@/components/ui/card';
+import Image from "next/image";
 
 export default function Home() {
     const experiencias = [
@@ -74,15 +75,23 @@ export default function Home() {
 
             <section className="text-center">
                 <div className="flex flex-col sm:flex-row justify-center gap-4 flex-wrap">
-                    <img
+                    <Image
                         src="https://github-readme-stats.vercel.app/api?username=jonathanssm&show_icons=true&theme=radical&hide_title=true"
                         alt="GitHub Stats"
                         className="rounded-lg w-full sm:w-[450px] h-auto"
+                        width={450}
+                        height={250}
+                        priority
+                        unoptimized
                     />
-                    <img
+                    <Image
                         src="https://github-readme-stats.vercel.app/api/top-langs/?username=jonathanssm&layout=compact&theme=radical&hide_title=true"
                         alt="Top Languages"
                         className="rounded-lg w-full sm:w-[350px] h-auto"
+                        width={350}
+                        height={150}
+                        priority
+                        unoptimized
                     />
                 </div>
             </section>
@@ -127,13 +136,13 @@ export default function Home() {
             <section className="space-y-4">
                 <h2 className="text-xl sm:text-2xl font-semibold">📌 Experiência Profissional</h2>
                 {experiencias.map((exp, idx) => (
-                    <Card key={idx} className="mb-4">
+                    <Card key={"key: " + idx} className="mb-4">
                         <CardContent className="p-4 sm:p-6 space-y-2">
                             <h3 className="text-lg sm:text-xl font-semibold">{exp.cargo}</h3>
                             <p className="text-sm sm:text-base text-muted-foreground">{exp.projeto}</p>
                             <ul className="list-disc list-inside text-sm sm:text-base space-y-1">
                                 {exp.atividades.map((a, i) => (
-                                    <li key={i}>{a}</li>
+                                    <li key={"key: " + i}>{a}</li>
                                 ))}
                             </ul>
                             <p className="text-sm sm:text-base text-muted-foreground">Stack: {exp.stack}</p>
@@ -148,7 +157,7 @@ export default function Home() {
                     <CardContent className="p-4 sm:p-6 space-y-2">
                         <ul className="list-disc list-inside space-y-1 text-sm sm:text-base">
                             {certificacoes.map((cert, i) => (
-                                <li key={i}>{cert}</li>
+                                <li key={"key: " + i}>{cert}</li>
                             ))}
                         </ul>
                     </CardContent>

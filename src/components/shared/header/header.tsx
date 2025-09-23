@@ -1,7 +1,7 @@
 'use client';
 
 import {useEffect, useState} from 'react';
-import {usePathname} from 'next/navigation';
+import {usePathname, useRouter} from 'next/navigation';
 import NavButton from '@/components/shared/header/nav-button';
 import ThemeToggle from '@/components/shared/header/theme-toggle';
 import MobileSheet from '@/components/shared/header/mobile-sheet';
@@ -12,6 +12,9 @@ export default function Header() {
     const pathname = usePathname();
     const [isSheetOpen, setIsSheetOpen] = useState(false);
     const {isMobile, mounted} = useIsMobile();
+    const router = useRouter();
+
+    const goHome = () => router.push("/home");
 
     useEffect(() => {
         if (mounted && !isMobile && isSheetOpen) {
@@ -25,7 +28,13 @@ export default function Header() {
                 <div className="container mx-auto px-4">
                     <div className="flex justify-between items-center py-4">
                         <div className="flex items-center gap-2">
-                            <span className="text-primary">💻</span>
+                            <Image
+                                src="/logo.svg"
+                                width={800} height={500} alt="Logo"
+                                className="w-15 h-10 rounded-full"
+                                onClick={goHome}
+                                priority
+                            />
                             <span className="text-2xl font-bold">Moraes CodeForge</span>
                         </div>
 
@@ -46,7 +55,13 @@ export default function Header() {
             <div className="container mx-auto px-4">
                 <div className="flex justify-between items-center py-4">
                     <div className="flex items-center gap-2">
-                        <span className="text-primary">💻</span>
+                        <Image
+                            src="/logo.svg"
+                            width={800} height={500} alt="Logo"
+                            className="w-20 h-15 rounded-full"
+                            onClick={goHome}
+                            priority
+                        />
                         <span className="text-2xl font-bold">Moraes CodeForge</span>
                     </div>
 
